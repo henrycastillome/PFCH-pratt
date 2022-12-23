@@ -345,7 +345,7 @@ def update_plot(search_term):
         legend_title_font_color='#f1f1f1',
         font=dict(
             family="Be Vietnam Pro, sans-serif",
-            size=12,
+            size=10,
             color='#f1f1f1')     )
 
         return fig
