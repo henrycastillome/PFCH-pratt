@@ -165,7 +165,7 @@ def render_page_content(pathname):
                                "  their favorite restaurant and see a table of its recent violations. ", style={'text-align':'left'}),
                 html.Br(),
                 html.H5(children="Thanks for checking out my work, let's get in touch. Contact me by email "),
-                html.U(children="at" + " hcasti40@pratt.edu")],
+                html.U(children="at " + " hcasti40@pratt.edu")],
                 style={'background-color':'#313131', 'border-radius':'25px', 'padding':'20px'}),
                 
 
