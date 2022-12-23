@@ -159,13 +159,13 @@ def render_page_content(pathname):
                 html.H1(children="Data Visualization of New York City's Restaurant Inspection", style={'text-align':'center'}),
                 html.H6(children="by Henry Castillo", style={'text-align':'center'}),
                 html.Br(),
-                html.P(children="Understanding the violation problem of New York City's restaurant. It uses the dataset inspection by the Deparment of Health and Mental Hygiene. " + 
-                               "I was able to clean the data using python. Then, I could  plot five types of figures using plotly and show two scattermapbox, one choroplet map, one barchar and one scatterbox. Also, " + 
-                               " I could add a search bar where users can type their favorite restaurant and print a table and they can see the violations the their favorite restaurant has" +
-                               " And lastly, I used the library Dash to create this site", style={'text-align':'left'}),
+                html.P(children="The purpose of this site is to understand the violation problem of New York City's restaurants by visualizing the inspection dataset compiled by  " + 
+                               " the Department of Health and Mental Hygiene. This site was created using the library Dash and the data was cleaned using Python and the library Pandas. " + 
+                               " I plotted five types of figures using Plotly- two scattermapboxes, one choropleth map, one bar chart and one scatterbox. Additionally, I created a search bar where users can look up " +
+                               "  their favorite restaurant and see a table of its recent violations. ", style={'text-align':'left'}),
                 html.Br(),
-                html.H5(children="Thanks for checking my work and let's get in touch. This is my email"),
-                html.U(children="hcasti40@pratt.edu")],
+                html.H5(children="Thanks for checking out my work, let's get in touch. Contact me by email "),
+                html.U(children="at" + " hcasti40@pratt.edu")],
                 style={'background-color':'#313131', 'border-radius':'25px', 'padding':'20px'}),
                 
 
