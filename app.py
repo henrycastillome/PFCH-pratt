@@ -9,9 +9,9 @@ from dash.dependencies import Input, Output
 from dotenv import load_dotenv
 import geopandas as gpd
 import plotly.express as px
-from function_graphs.choropletmapborough import create_choroplet_map
-from function_graphs.markersallrestaurants import markers_allrestaurants
-from function_graphs.criticalrestaurants import critical_restaurants
+from src.function_graphs.choropletmapborough import create_choroplet_map
+from src.function_graphs.markersallrestaurants import markers_allrestaurants
+from src.function_graphs.criticalrestaurants import critical_restaurants
 import plotly.graph_objs as go
 import dash_bootstrap_components as dbc
 
@@ -21,8 +21,8 @@ import dash_bootstrap_components as dbc
 load_dotenv()
 mapbox_key = os.environ['apikey']
 
-DATA = '/Users/henrycastillomelo/Documents/Full stack Bootcamp/Course 7 Ptyhon for Data science, AI and else/Project Pratt/assets/restaurant_data.csv'
-DATA_BARCHART = 'https://raw.githubusercontent.com/henrycastillome/PFCH/main/violation_data.csv'
+DATA = 'https://raw.githubusercontent.com/henrycastillome/PFCH/main/assets/restaurant_data.csv'
+DATA_BARCHART = 'https://raw.githubusercontent.com/henrycastillome/PFCH/main/assets/violation_data.csv'
 violation_data = pd.read_csv(DATA_BARCHART)
 
 suppress_callback_exceptions=True
@@ -198,7 +198,7 @@ def select_graph(value):
             columns={'BORO': 'BOROUGH', "CRITICAL FLAG": 'Total Critical'}, inplace=True)
 
         boro_grouped.columns = list(map(str, boro_grouped.columns))
-        geojson = '/Users/henrycastillomelo/Documents/Full stack Bootcamp/Course 7 Ptyhon for Data science, AI and else/Project Pratt/assets/Borough Boundaries.geojson'
+        geojson = '/Users/henrycastillomelo/Documents/Full stack Bootcamp/Course 7 Ptyhon for Data science, AI and else/Project Pratt copy/src/function_graphs/Borough Boundaries.geojson'
 
         with open(geojson, encoding='utf-8') as json_file:
             data_geojson = json.load(json_file)
@@ -319,7 +319,7 @@ def update_plot(search_term):
         
 
         # filter the data based on the search term
-        data_table= '/Users/henrycastillomelo/Documents/Full stack Bootcamp/Course 7 Ptyhon for Data science, AI and else/remainings project pratt/restaurant_data_table.csv'
+        data_table= '/Users/henrycastillomelo/Documents/Full stack Bootcamp/Course 7 Ptyhon for Data science, AI and else/Project Pratt copy/src/function_graphs/restaurant_data_table.csv'
         df=pd.read_csv(data_table)
 
 
@@ -345,7 +345,7 @@ def update_plot(search_term):
         legend_title_font_color='#f1f1f1',
         font=dict(
             family="Be Vietnam Pro, sans-serif",
-            size=18,
+            size=12,
             color='#f1f1f1')     )
 
         return fig
@@ -370,4 +370,4 @@ def hide_graph(my_input):
 
 
 if __name__ == '__main__':
-    app.run_server(debug=False,dev_tools_ui=False,dev_tools_props_check=False)
+    app.run_server(debug=True,dev_tools_ui=False,dev_tools_props_check=False, host='0.0.0.0', port=8050)

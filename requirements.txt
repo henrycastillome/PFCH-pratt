@@ -1,9 +1,11 @@
-dash
-pandas
+dash==2.7.0
+dash_bootstrap_components==1.2.1
+dash_core_components==2.0.0
+dash_html_components==2.0.0
+geopandas==0.12.1
+pandas==1.3.5
+plotly==5.11.0
+python-dotenv==0.21.0
 gunicorn
 flask
-dash-auth==1.3.2
 requests
-plotly.express
-geopandas
-load_dotenv
